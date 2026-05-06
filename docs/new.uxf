@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>940</x>
+      <y>610</y>
+      <w>210</w>
+      <h>260</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Clase&gt;&gt;
+Recomendador
+--
+- _instancia: Recomendador
+- _estrategia: EstrategiaBusqueda
+- _sesion_actual: Sesion
+--
+#getters
+- +get_instancia()
+- +get_estrategia()
+- +get_sesion()
+#setters
+- +set_instancia()
+- +set_estrategia()
+- +set_sesion()
+
+- +recomendar(Catalogo: list)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1410</x>
+      <y>610</y>
+      <w>370</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interfaz&gt;&gt;
+EstrategiaBusqueda
+--
+- +buscar(catalogo: list, estadisticas: Dict): ItemCatalogo</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1620</x>
+      <y>720</y>
+      <w>370</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Clase&gt;&gt;
+BusquedaTemporal
+--
+- +buscar(catalogo: list, estadisticas: Dict): ItemCatalogo
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1210</x>
+      <y>720</y>
+      <w>370</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Clase&gt;&gt;
+BusquedaAlfabetica
+--
+- +buscar(catalogo: list, estadisticas: Dict): ItemCatalogo
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1410</x>
+      <y>810</y>
+      <w>370</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Clase&gt;&gt;
+BusquedaAleatoria
+--
+- +buscar(catalogo: list, estadisticas: Dict): ItemCatalogo
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1590</x>
+      <y>680</y>
+      <w>30</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>620</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1590</x>
+      <y>680</y>
+      <w>50</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;30.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1570</x>
+      <y>680</y>
+      <w>50</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30.0;10.0;30.0;70.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1140</x>
+      <y>620</y>
+      <w>290</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;270.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>1110</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>DecoradorCatalogo
+--
+- _componente: Catalogo
+--
+-  +obtener_catalogo():</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>950</y>
+      <w>370</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interfaz&gt;&gt;
+Catalogo
+--
+-  +obtener_catalogo():list devolver lista de element	</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>1110</y>
+      <w>170</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>CatalogoCanciones
+--
+-  +obtener_catalogo():</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>1220</y>
+      <w>160</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>DecoradorPlaylists
+--
+-  +obtener_catalogo():</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>860</x>
+      <y>1220</y>
+      <w>170</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>DecoradorArtistas
+--
+-  +obtener_catalogo():</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>770</x>
+      <y>1190</y>
+      <w>70</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;50.0;70.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>1190</y>
+      <w>70</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;50.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>1000</y>
+      <w>180</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;170.0;160.0;170.0;160.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>1030</y>
+      <w>80</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60.0;10.0;60.0;130.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>600</x>
+      <y>1030</y>
+      <w>100</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0;80.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1160</x>
+      <y>940</y>
+      <w>360</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Clase&gt;&gt;
+ManejadorEstadisticas
+--
+- _siguiente_manejador: ManejadorEstadisticas
+--
+- +procesar_cancion(cancion: Cancion, sesion: Sesion)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1180</x>
+      <y>1330</y>
+      <w>330</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>1. acatualizar media/desviacion de caracteristicas
+   sonoras de la sesion
+2. 
+if self.siguiente_manejador is not None:
+     self.siguiente_manejadir.procesar_cancion()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1150</x>
+      <y>1250</y>
+      <w>50</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;30.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1100</x>
+      <y>1160</y>
+      <w>360</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Clase&gt;&gt;
+ManejadorSonoro
+--
+- _siguiente_manejador: ManejadorEstadisticas
+--
+- +procesar_cancion(cancion: Cancion, sesion: Sesion)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1480</x>
+      <y>1160</y>
+      <w>360</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Clase&gt;&gt;
+ManejadorSentimental
+--
+- _siguiente_manejador: ManejadorEstadisticas
+--
+- +procesar_cancion(cancion: Cancion, sesion: Sesion)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1300</x>
+      <y>1030</y>
+      <w>30</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1300</x>
+      <y>1030</y>
+      <w>370</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;350.0;70.0;350.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1550</x>
+      <y>1330</y>
+      <w>330</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>1. acatualizar media/desviacion de caracteristicas
+   sentimentales de la sesion</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1520</x>
+      <y>1250</y>
+      <w>50</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0;30.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>610</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>PublicadorReproduccion
+--
+- +alta(subscriptor)
+- +baja(subscriptor)
+- +notificarSubscriptores()
+--
+- +subscriptores: List[Subscriptor]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>610</y>
+      <w>150</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interfaz&gt;&gt;
+Subscriptor
+--
+- +actualizar(evento)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>650</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>860</y>
+      <w>180</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>160.0;10.0;160.0;110.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1080</x>
+      <y>860</y>
+      <w>100</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0;80.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>940</x>
+      <y>580</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Singleton</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1410</x>
+      <y>580</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Strategy</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1160</x>
+      <y>910</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Cadena de responabilidad</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>700</x>
+      <y>580</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>observer</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>450</x>
+      <y>920</y>
+      <w>100</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Decorador</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1430</x>
+      <y>100</y>
+      <w>310</w>
+      <h>380</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Clase&gt;&gt;
+Cancion
+--
+- _id_cancion: str
+- _titulo: str
+- _fecha_creacion: date
+- _atributos_sonoros: dict
+- _atributos_sentimentales: dict
+--
+#getters
++ get_id_cancion()
++ get_titulo()
++ get_fecha_creacion()
++ get_atributos_sonoros()
++ get_atributos_sentimentales()
+
+#setters
++ set_id_cancion(id: str)
++ set_titulo(titulo: str)
++ set_fecha_creacion(fecha: date)
++ set_atributos_sonoros(atributos: dict)
++ set_atributos_sentimentales(atributos: dict)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1070</x>
+      <y>100</y>
+      <w>310</w>
+      <h>380</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Clase&gt;&gt;
+Sesion
+--
+- _canciones_escuchadas: list
+- _media_sonora: dict
+- _desviacion_sonora: dict
+- _media_sentimental: dict
+- _desviacion_sentimental: dict
+--
+#getters
++ get_canciones_escuchadas()
++ get_media_sonora()
++ get_desviacion_sonora()
++ get_media_sentimental()
++ get_desviacion_sentimental()
+
+#setters
++ set_canciones_escuchadas(canciones: list)
++ set_media_sonora(media: dict)
++ set_desviacion_sonora(desviacion: dict)
++ set_media_sentimental(media: dict)
++ set_desviacion_sentimental(desviacion: dict)
+
++ agregar_cancion(cancion: Cancion)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>180</y>
+      <w>310</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Clase&gt;&gt;
+Cantante
+--
+- _nombre: str
+- _fecha_nacimiento: date
+- _canciones: list
+--
+#getters
++ get_nombre()
++ get_fecha_nacimiento()
++ get_canciones()
+
+#setters
++ set_nombre(nombre: str)
++ set_fecha_nacimiento(fecha: date)
++ set_canciones(canciones: list)
+
++ calcular_media_sonora()
++ calcular_media_sentimental()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>420</x>
+      <y>180</y>
+      <w>310</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Clase&gt;&gt;
+Playlist
+--
+- _titulo: str
+- _fecha_creacion: date
+- _canciones: list
+--
+#getters
++ get_titulo()
++ get_fecha_creacion()
++ get_canciones()
+
+#setters
++ set_titulo(titulo: str)
++ set_fecha_creacion(fecha: date)
++ set_canciones(canciones: list)
+
++ calcular_media_sonora()
++ calcular_media_sentimental()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>610</y>
+      <w>310</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Clase&gt;&gt;
+ProductorKafka
+--
+- _topic: str
+--
+#getters
++ get_topic()
+
+#setters
++ set_topic(topic: str)
+
++ generar_evento_escucha()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1110</x>
+      <y>470</y>
+      <w>30</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1370</x>
+      <y>390</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>960</x>
+      <y>20</y>
+      <w>540</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>520.0;80.0;520.0;10.0;10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>910</x>
+      <y>470</y>
+      <w>30</w>
+      <h>770</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;750.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>360</x>
+      <y>440</y>
+      <w>280</w>
+      <h>850</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>260.0;830.0;10.0;830.0;10.0;10.0;60.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>0</y>
+      <w>870</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>850.0;100.0;850.0;10.0;10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+</diagram>
