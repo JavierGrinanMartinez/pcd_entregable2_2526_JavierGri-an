@@ -1,0 +1,8 @@
+ERROR:root:Fallo en main2: Uno de los elementos del catálogo no tiene el método get_fecha().
+ERROR:root:Fallo en main2: Uno de los elementos del catálogo no tiene el método get_fecha().
+ERROR:root:Fallo en main2: Uno de los elementos del catálogo no tiene el método get_fecha().
+ERROR:root:Fallo en main2: Uno de los elementos del catálogo no tiene el método get_fecha().
+ERROR:root:Error al cargar base de datos: no such table: canciones
+ERROR:root:Fallo en main2: 'Cancion' object has no attribute 'calcular_media_sonora'
+ERROR:root:Fallo en main2: 'Cancion' object has no attribute 'calcular_media_sonora'
+ERROR:root:Fallo en main2: 'Cancion' object has no attribute 'calcular_media_sonora'

@@ -56,3 +56,30 @@ class BusquedaAleatoria(EstrategiaBusqueda):
         except ElementoNoEncontradoError as e:
             raise e
         
+class EstrategiaMatchSimilitud(EstrategiaBusqueda):
+    def buscar(self, catalogo: list, medias_sesion: dict) -> object:
+        if not medias_sesion or "media_general" not in medias_sesion:
+            return catalogo[0] if catalogo else None
+
+        mejor_match = None
+        minima_diferencia = float('inf')
+
+        for item in catalogo:
+            media_item = {}
+            
+            if hasattr(item, 'calcular_media_sonora'):
+                media_item = item.calcular_media_sonora()
+                
+            elif hasattr(item, 'get_atributos_sonoros'):
+                attrs = item.get_atributos_sonoros()
+                if attrs:
+                    media_item = {"media_general": sum(attrs.values()) / len(attrs)}
+
+            if media_item and "media_general" in media_item:
+                diferencia = abs(medias_sesion["media_general"] - media_item["media_general"])
+                
+                if diferencia < minima_diferencia:
+                    minima_diferencia = diferencia
+                    mejor_match = item
+
+        return mejor_match

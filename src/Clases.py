@@ -12,7 +12,7 @@ class Fecha:
     def __lt__(self, otra: 'Fecha'):
 
         if self.año != otra.año:
-            return self.anio < otra.anio
+            return self.año < otra.año
 
         elif self.mes != otra.mes:
             return self.mes < otra.mes

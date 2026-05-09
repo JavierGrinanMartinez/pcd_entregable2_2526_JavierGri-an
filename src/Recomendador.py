@@ -88,7 +88,7 @@ class Recomendador:
         if not diccionario_medias:
                 raise AtributoInvalidoError("Las medias sonoras no se han calculado correctamente.")
 
-        # 4. PATRÓN STRATEGY: Le pasamos la lista y las medias al cartucho de búsqueda
+        # 4. PATRÓN STRATEGY: se le pasa el catalogo y las medias
         resultado = self._estrategia.buscar(lista_catalogo, diccionario_medias)
 
         if resultado is None:
