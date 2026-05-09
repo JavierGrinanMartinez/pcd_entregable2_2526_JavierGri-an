@@ -293,7 +293,7 @@ ManejadorEstadisticas
    sonoras de la sesion
 2. 
 if self.siguiente_manejador is not None:
-     self.siguiente_manejadir.procesar_cancion()</panel_attributes>
+     self.siguiente_manejadir.procesar()</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

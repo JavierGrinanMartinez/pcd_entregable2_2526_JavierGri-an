@@ -2,18 +2,18 @@ from abc import ABC, abstractmethod
 
 class Catalogo(ABC):
     @abstractmethod
-    def obtener_catalogo(self) -> list:
+    def obtener_elementos(self) -> list:
         #Devuelve la lista de elementos del catálogo
         pass
 
-class CatalogoCanciones(ComponenteCatalogo):
+class CatalogoCanciones(Catalogo):
     def __init__(self, canciones: list):
         self._canciones = canciones
 
-    def obtener_catalogo(self) -> list:
+    def obtener_elementos(self) -> list:
         return self._canciones
 
-class DecoradorCatalogo(ComponenteCatalogo):
+class DecoradorCatalogo(Catalogo):
 
     def __init__(self, componente: Catalogo):
         self._componente = componente
