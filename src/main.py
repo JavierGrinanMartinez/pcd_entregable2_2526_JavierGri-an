@@ -1,15 +1,14 @@
-# --- IMPORTES ---
-# Aquí tendrás que importar tus clases dependiendo de cómo hayas llamado a tus archivos
-# Ejemplo: from modelo import Cancion, Cantante, Playlist, Sesion
-# Ejemplo: from patrones import BusquedaAlfabetica, BusquedaAleatoria, ManejadorSonoro...
-# Ejemplo: from recomendador import Recomendador
-
 import Clases, Decorador, Manejador, Recomendador, Strategy
 from Clases import *
 from Manejador import *
 from Decorador import *
 from Recomendador import *
 from Strategy import *
+import logging
+
+#----------------------------------#
+logging.basicConfig(filename='sistema.log', level=logging.ERROR)
+#----------------------------------#
 
 Fecha1 = Clases.Fecha(12,2,2025)
 Fecha2 = Clases.Fecha(1,7,2021)
@@ -27,29 +26,23 @@ atributoSO1 = {
     "escala": 0.45
 }
 
-# Canción rápida y aguda
 atributoSO2 = {
     "ritmo": 0.85,
     "tono": 0.90,
     "escala": 0.70
 }
 
-# Canción de ritmo medio, muy grave
 atributoSO3 = {
     "ritmo": 0.50,
     "tono": 0.15,
     "escala": 0.30
 }
 
-# Canción acústica o chill
 atributoSO4 = {
     "ritmo": 0.35,
     "tono": 0.60,
     "escala": 0.50
 }
-
-
-# --- ATRIBUTOS SENTIMENTALES (SE) ---
 
 atributoSE1 = {
     "felicidad": 0.7,
@@ -57,21 +50,18 @@ atributoSE1 = {
     "otro": 0.1
 }
 
-# Canción muy alegre, cero tristeza
 atributoSE2 = {
     "felicidad": 0.95,
     "tristeza": 0.05,
     "otro": 0.3
 }
 
-# Canción deprimente o melancólica
 atributoSE3 = {
     "felicidad": 0.10,
     "tristeza": 0.85,
     "otro": 0.6
 }
 
-# Canción neutra o épica (fuerte en "otro")
 atributoSE4 = {
     "felicidad": 0.40,
     "tristeza": 0.40,
@@ -84,8 +74,7 @@ def main():
     print("=== INICIANDO PRUEBA DEL RECOMENDADOR MVP ===")
 
     print("\n1. CREANDO DATOS DE PRUEBA...")
-    # Ajusta estos datos según los parámetros que pidan tus clases
-    cancion1 = Cancion(1,"Jesucristo Garcia",Fecha1,atributoSO1,atributoSE1) # Imagina que tiene atributos y fecha por dentro
+    cancion1 = Cancion(1,"Jesucristo Garcia",Fecha1,atributoSO1,atributoSE1)
     cancion2 = Cancion(2,"So payaso",Fecha2,atributoSO2,atributoSE2)
 
     cancion3 = Cancion(2,"Fiesta pagana",Fecha3,atributoSO3,atributoSE3)
@@ -109,13 +98,12 @@ def main():
 
     print("\n2. PROBANDO LA SESIÓN Y CADENA DE RESPONSABILIDAD...")
     mi_sesion = Sesion()
-    # Asumiendo que tienes un método para añadir canciones a la sesión
+  
     mi_sesion.agregar_cancion(cancion1) 
     mi_sesion.agregar_cancion(cancion2)
 
-    # Creamos y ejecutamos la cadena matemática
     eslabon_sonoro = ManejadorSonoro()
-    # Si tienes el sentimental: eslabon_sonoro.set_siguiente(eslabon_sentimental)
+
     eslabon_sonoro.procesar(mi_sesion)
     
     print(f" -> Medias calculadas: {mi_sesion.get_media_sonora()}")
@@ -133,7 +121,6 @@ def main():
     id_usuario = 1
     recomendador = Recomendador.obtener_instancia(id_usuario)
     
-    # Le enchufamos las piezas
     recomendador.set_sesion(mi_sesion)
     recomendador.set_catalogo(mi_catalogo)
     print(" -> Recomendador configurado con éxito.")

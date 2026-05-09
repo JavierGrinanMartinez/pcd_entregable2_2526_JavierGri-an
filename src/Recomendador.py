@@ -1,3 +1,6 @@
+from excepciones import *
+
+
 class Recomendador:
 
 
@@ -56,32 +59,39 @@ class Recomendador:
 
 
 # --- METODOS ---
-
-    # 2. Corregido: Ahora tiene su sangría (espacios) para estar dentro de la clase
     def recomendar(self) -> object:
         """
         Conecta el Decorator, la Sesion y el Strategy para devolver una recomendación.
         """
 
         if self._catalogo_activo is None:
-            print("Error: Falta el catálogo.")
-            return None
+            raise RecomendadorError("No se puede recomendar: El catálogo no ha sido inicializado.")
 
         if self._estrategia is None:
-            print("Error: Falta la estrategia de búsqueda.")
-            return None
+            raise RecomendadorError("No se puede recomendar: Falta definir la estrategia de búsqueda.")
             
         if self._sesion_actual is None:
-            print("Error: Falta iniciar la sesión.")
-            return None
+            raise RecomendadorError("No se puede recomendar: No hay una sesión activa.")
+
+        if not self._sesion_actual.get_canciones_escuchadas():
+                raise SesionVaciaError("La sesión no tiene canciones escuchadas para generar una media.")
+
+
 
         # 2. PATRÓN DECORATOR: saca la lista catalogo
         lista_catalogo = self._catalogo_activo.obtener_elementos()
+        if not lista_catalogo:
+                raise ElementoNoEncontradoError("Catálogo", "El catálogo está vacío.")
 
         # 3. PATRÓN CHAIN OF RESP: Saca los calculos
         diccionario_medias = self._sesion_actual.get_media_sonora()
+        if not diccionario_medias:
+                raise AtributoInvalidoError("Las medias sonoras no se han calculado correctamente.")
 
         # 4. PATRÓN STRATEGY: Le pasamos la lista y las medias al cartucho de búsqueda
         resultado = self._estrategia.buscar(lista_catalogo, diccionario_medias)
+
+        if resultado is None:
+                print("Aviso: La estrategia no ha encontrado ninguna coincidencia.")
 
         return resultado
