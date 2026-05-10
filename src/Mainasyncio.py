@@ -53,7 +53,7 @@ async def productor_usuario(cola, lista_ids):
         fecha_hora_actual = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         tupla_evento = (id_cancion, fecha_hora_actual)
         
-        print(f"\n🎧 [Evento de Streaming] -> {tupla_evento}")
+        print(f"\n[Evento de Streaming] -> {tupla_evento}")
         await cola.put(tupla_evento)
 
 async def consumidor_sistema(cola, sesion, recomendador, todas_las_canciones):
@@ -64,17 +64,17 @@ async def consumidor_sistema(cola, sesion, recomendador, todas_las_canciones):
         cancion_escuchada = next((c for c in todas_las_canciones if c.get_id_cancion() == id_recibido), None)
         
         if cancion_escuchada:
-            print(f"   ✓ Canción identificada: {cancion_escuchada.get_titulo()}")
+            print(f"    Canción identificada: {cancion_escuchada.get_titulo()}")
             sesion.agregar_cancion(cancion_escuchada)
             manejador.procesar(sesion)
             
             media_actual = sesion.get_media_sonora().get('media_general', 0)
-            print(f"   📊 Nueva media de la sesión: {media_actual:.3f}")
+            print(f"    Nueva media de la sesión: {media_actual:.3f}")
             
             match_encontrado = recomendador.recomendar()
-            print(f"   🎯 MATCH ENCONTRADO (Similitud): {match_encontrado} ")
+            print(f"    MATCH ENCONTRADO (Similitud): {match_encontrado} ")
         else:
-            print(f"   ❌ Error: El ID {id_recibido} no existe.")
+            print(f"    Error: El ID {id_recibido} no existe.")
         
         cola.task_done()
 
@@ -87,7 +87,7 @@ async def main_async():
     canciones_db, cantantes_db = cargar_db_independiente()
     
     if not canciones_db:
-        print("❌ ERROR: No se ha podido cargar la base de datos.")
+        print("ERROR: No se ha podido cargar la base de datos.")
         return
 
     # Configurar Recomendador

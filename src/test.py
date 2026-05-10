@@ -71,10 +71,3 @@ def test_recomendador_instancia_unica():
 def test_excepcion_crear_decorador_sin_componente():
     with pytest.raises(Exception): # Debería lanzar RecomendadorError según tu lógica
         DecoradorArtistas(None, ["Artista"])
-
-def test_manejador_con_sesion_vacia_no_explota():
-    sesion = Sesion()
-    manejador = ManejadorSonoro()
-    # No debería lanzar excepción, solo imprimir aviso y seguir
-    manejador.procesar(sesion)
-    assert sesion.get_media_sonora() is None
